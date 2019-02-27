@@ -1,0 +1,55 @@
+@import (reference) "../../assets/css/base.less";
+@import "../../assets/iconfonts/iconfont.css";
+.header-container{
+  background-color: @base-color;
+  .flex();
+  .wh(100%,88px);
+  position: relative;
+  .header-slide-icon{
+    .font(36px, #fff);
+    .flex();
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .header-title{
+    .font(40px, #fff)
+  }
+  .header-link{
+    .font(40px, #fff);
+    .flex();
+    position: absolute;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .nav-slide-list{
+    .wh(100%, 100%);
+    position: fixed;
+    top: 88px;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    .nav-slide-list-wrap{
+      .wh(300px, 100%);
+      background: #ffffff;
+    }
+  }
+
+  .nav-enter{
+    transform: translate3d(-100%, 0, 0);
+  }
+  .nav-enter.nav-enter-active{
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.3s;
+  }
+  .nav-leave{
+    transform: translate3d(0, 0, 0);
+  }
+  .nav-leave.nav-leave-active{
+    transform: translate3d(-100%, 0, 0);
+    transition: transform 0.3s;
+  }
+}
