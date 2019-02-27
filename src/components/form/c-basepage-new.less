@@ -1,0 +1,66 @@
+@import (reference) "../../assets/css/base.less";
+
+.c-basepage-new-wrap{
+  .c-basepage-new-box{
+    .c-basepage-new-title{
+      .font(30px,#333);
+    }
+    .c-basepage-new-content{
+
+    }
+    .c-basepage-new-content-form{
+
+    }
+  }
+
+  //form-item
+  .form-item-wrap{
+    .wh(100%, 50px);
+    padding: 0 10px;
+    margin: 10px 0;
+    .form-item-label{
+
+    }
+    .form-item-input{
+
+    }
+  }
+  .form-item-horizontal{
+    .flex(left, center);
+    .form-item-label{
+      .font(18px, #666, right);
+      flex: none;
+      padding-right: 10px;
+    }
+    .form-item-input{
+      flex: 1;
+      height: 100%;
+    }
+  }
+  .form-item-vertical{
+
+  }
+  //form-select
+  .form-select-wrap{
+    height: 100%;
+    .form-select-select{
+      .wh(100%, 100%);
+      .ant-select-selection--single{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        .ant-select-selection__rendered{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  //form-input
+  .form-input-wrap{
+    height: 100%;
+    input{
+      height: 100%;
+    }
+  }
+}

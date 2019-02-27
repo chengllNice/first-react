@@ -4,8 +4,16 @@ import { typeOf} from "../../assets/js/util";
 import FormItem from './form-item'
 
 export default class Form extends Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      layout: this.props.layout
+    }
+  }
+
   static propTypes = {
-    data: PropTypes.oneOfType(PropTypes.object,PropTypes.array)
+    data: PropTypes.oneOfType([PropTypes.object,PropTypes.array]),
+    layout: PropTypes.string
   };
   state = {
 
@@ -14,19 +22,20 @@ export default class Form extends Component{
     return typeOf(obj)
   };
   render(){
+    const name = 'form';
     return(
-      <div>
+      <div className={`${name}-wrap`}>
         {
-          this.data_type(this.props.data) === 'object' && <div className='form-item-wrap'>
-            <FormItem data={this.props.data}></FormItem>
+          this.data_type(this.props.data) === 'object' && <div className={`${name}-content`}>
+            <FormItem data={this.props.data} layout={this.state.layout}></FormItem>
           </div>
         }
         {
-          this.data_type(this.props.data) === 'array' && <div className='form-item-wrap'>
+          this.data_type(this.props.data) === 'array' && <div className={`${name}-content`}>
             {
               this.props.data.map((item, index)=>{
                 return <div className={`form-item-wrap-col-${index+1}`} key={index}>
-                  <FormItem data={item}></FormItem>
+                  <FormItem data={item} layout={this.state.layout}></FormItem>
                 </div>
               })
             }

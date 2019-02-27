@@ -1,7 +1,8 @@
 export const form_data = [
   {
     id: '',
-    title: '',
+    title: '测试title',
+    layout: 'horizontal',//'horizontal'|'vertical'
     data: [
       {
         id: 'product_type',
@@ -15,7 +16,20 @@ export const form_data = [
         edit_show: true,
         slot: '',
         value: '',
-        options: [],
+        options: [
+          {
+            id: '0',
+            name: '测试1'
+          },
+          {
+            id: '1',
+            name: '测试2'
+          },
+          {
+            id: '2',
+            name: '测试3'
+          }
+        ],
         expand: {},
         jpath: ''
       },
@@ -71,8 +85,8 @@ export const form_data = [
         id: 'clientele_phone',
         name: '客户电话',
         type: 'input',
-        check_type: '请填写客户电话',
-        placeholder: '',
+        check_type: '',
+        placeholder: '请填写客户电话',
         disabled: false,
         show: true,
         edit_disabled: false,
