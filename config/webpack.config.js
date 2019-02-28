@@ -23,7 +23,7 @@ const getClientEnvironment = require('./env');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin-alt');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
-const px2rem = require('postcss-px2rem');
+// const px2rem = require('postcss-px2rem');
 
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
@@ -105,7 +105,7 @@ module.exports = function (webpackEnv) {
               },
               stage: 3,
             }),
-            px2rem({remUnit: 75})//设计稿根据750px(iphone6)
+            // px2rem({remUnit: 75})//设计稿根据750px(iphone6)
           ],
           sourceMap: isEnvProduction ? shouldUseSourceMap : isEnvDevelopment,
         },

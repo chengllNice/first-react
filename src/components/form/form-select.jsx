@@ -32,13 +32,34 @@ export default class FormSelect extends Component {
 
   };
 
+  deal_disabled(){
+    let disabled = false;
+    if(this.props.params && this.props.params.type === 'edit'){
+      disabled = this.props.data.edit_disabled || false;
+    }else{
+      disabled = this.props.data.disabled || false;
+    }
+    this.setState({
+      disabled: disabled
+    });
+  }
+
   valueChange(value, option) {
-    console.log(value, option)
-    // this.setState({
-    //   value: e.target.value
-    // });
-    // this.props.valueChange(e.target.value);
+    this.setState({
+      value: value
+    });
+    let obj = {
+      type: 'select',
+      value: value,
+    };
+    if(this.props.valueChange){
+      this.props.valueChange(obj)
+    }
   };
+
+  componentWillMount(){
+    this.deal_disabled();
+  }
 
   render() {
     const name = 'form-select';

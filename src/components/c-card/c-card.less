@@ -1,0 +1,33 @@
+@import (reference) "../../assets/css/base.less";
+
+.c-card-wrap{
+  .c-card-card{
+    .c-card-title{
+      .flex(space-between, center);
+      border-bottom: 1px solid #e9eaec;
+      padding: 10px;
+      .c-card-title-left{
+        .flex(left);
+        .wh(100%, 30px);
+        .c-card-title-icon{
+          margin-right: 10px;
+        }
+        .c-card-title-text{
+          .font(14px, #333);
+          font-weight: bold;
+        }
+      }
+      .c-card-title-right{
+
+      }
+    }
+    .c-card-content{
+
+    }
+  }
+
+  //修改ui框架样式
+  .ant-card-body{
+    padding: 0;
+  }
+}

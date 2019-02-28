@@ -7,7 +7,7 @@ import store from './store/store';
 // import './index.css';
 // import App from './App';
 import * as serviceWorker from './serviceWorker';
-import './assets/js/setRem';
+// import './assets/js/setRem';
 import './assets/css/base.css'
 
 const render = Component => {

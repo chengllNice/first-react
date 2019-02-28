@@ -1,0 +1,3 @@
+
+// 左侧导航切换
+export const TOGGLELEFTNAVFLAG = 'TOGGLELEFTNAVFLAG';

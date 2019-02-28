@@ -57,6 +57,10 @@ html,body{
 .common-con-top{
   margin-top: 88px;
 }
+#root{
+  width: 100%;
+  height: 100%;
+}
 
 /*基础类*/
 .ellipsis{
