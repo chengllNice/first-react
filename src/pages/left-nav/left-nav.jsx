@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { Icon} from 'antd'
+import { Icon, Tooltip } from 'antd'
 import PropTypes from 'prop-types'
 import { toggelLeftNavFlag } from '../../store/public/action';
 import { leftNavData} from './left-nav-data.js'
@@ -43,22 +43,30 @@ class LeftNav extends Component {
         <div className={`${name}-aside-list`}>
           {
             this.state.leftNavData.map((item, index)=>{
-              return <NavLink to={item.path} key={index} exact className={`nav-link`}>
-                <Icon className='nav-link-icon' type={item.icon}/>
+              return <div className={`${name}-aside-list-item`} key={index}>
+                <NavLink to={item.path} exact className={`nav-link`}>
+                  <Tooltip placement='right' title={!this.props.PublicData.leftNavFlag ? item.name : ''}>
+                    <span className={`${name}-item-icon`}><Icon className='nav-link-icon' type={item.icon}/></span>
+                  </Tooltip>
                   {
                     this.props.PublicData.leftNavFlag && <span className='nav-link-name'>{item.name}</span>
                   }
-              </NavLink>
+                </NavLink>
+              </div>
             })
           }
         </div>
         <div className={`${name}-aside-bottom`}>
           {
-            this.props.PublicData.leftNavFlag && <div className='bottom-text'>
+            this.props.PublicData.leftNavFlag && <div className='bottom-text ellipsis'>
               {this.state.bottomText}
             </div>
           }
-          <Icon className='bottom-icon' type="menu-fold" onClick={this.toggleNav}/>
+          <Tooltip placement='right' title={!this.props.PublicData.leftNavFlag ? this.state.bottomText : ''}>
+            <span className='bottom-icon-wrap'>
+              <Icon className={`bottom-icon ${!this.props.PublicData.leftNavFlag ? 'bottom-icon-open' : ''}`} type="menu-fold" onClick={this.toggleNav}/>
+            </span>
+          </Tooltip>
         </div>
       </aside>
     )

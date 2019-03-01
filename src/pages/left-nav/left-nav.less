@@ -1,44 +1,53 @@
 @import (reference) "../../assets/css/base.less";
 
 .left-nav-aside{
-  width: 160px;
+  width: @left-nav-width;
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: #495060;
+  background: @left-nav-bg-color;
   position: relative;
   transition: all 0.5s;
+  overflow: hidden;
   .left-nav-aside-list{
+    width: @left-nav-width;
     flex: 1;
     display: flex;
     flex-direction: column;
-    .nav-link{
-      .font(14px, #ddd);
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      padding: 10px 17px;
-      position: relative;
-      &:hover{
-        color: #ffffff;
-        background: rgba(42,50,63,1);
-      }
-      &:before{
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translate3d(0, -50%, 0);
-        color: #666;
-      };
+    .left-nav-aside-list-item{
+      .nav-link{
+        .font(14px, #ddd);
+        .wh(100%, 40px);
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        padding: 0 17px;
+        position: relative;
+        &:hover{
+          color: #ffffff;
+          background: rgba(42,50,63,1);
+        }
+        &:before{
+          position: absolute;
+          right: 10px;
+          top: 50%;
+          transform: translate3d(0, -50%, 0);
+          color: #666;
+        };
 
-      .nav-link-icon{
-        .font(16px, #ddd);
-        padding-right: 10px;
-      }
+        .left-nav-item-icon{
+          .flex();
+          height: 100%;
+          .nav-link-icon{
+            .font(16px, #ddd);
+            padding-right: 10px;
+          }
+        }
 
-      .nav-link-name{
+        .nav-link-name{
 
+        }
       }
     }
   }
@@ -49,13 +58,20 @@
     .bottom-text{
       .font(14px, #e3e6e7);
       padding-left: 10px;
+      overflow: hidden;
     }
-    .bottom-icon{
+    .bottom-icon-wrap{
       .font(20px, #e3e6e7);
       .wh(50px, 100%);
       .flex();
       border-left: 1px solid rgba(255,255,255,0.1);
       cursor: pointer;
+      .bottom-icon{
+        transition: all 0.5s;
+      }
+      .bottom-icon-open{
+        transform: rotate(180deg);
+      }
     }
   }
 }
